@@ -14,4 +14,16 @@ for _ in matrix:
 
 print(matrix_len)
 
-number
+for number in range (matrix_len):
+    temporary_len = 0
+    for i in matrix[number]:
+        temporary_len+=1
+    if temporary_len<=4:
+        print(f'{matrix[number]}리스트는 {temporary_len}개 만큼 요소를 가지고 있습니다.')
+
+for x in range (matrix_len):
+    for y in range (len(matrix[x])):
+        print(f'matrix의 {x}, {y} 번째 요소의 값은 {matrix[x][y]}입니다.')
+
+
+    

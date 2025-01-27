@@ -4,9 +4,7 @@ global_data = {'subject': 'python', 'day': 3, 'title': '함수 활용하기'}
 def create_data(subject, day, title=None):
     global pro_num
     data = {}
-    data['subject'] = subject
-    data['day'] = day
-    data['title'] = title
+    data = {'subject':subject, 'day':day, 'title':title}
     pro_num+=1
     data['문제 번호'] = pro_num 
     return data

@@ -14,12 +14,14 @@ food_list = [
 ]
 
 # '채소'를 '과일'로 변경
-food_list[1]['종류'] = '과일'
+# food_list[1]['종류'] = '과일'
 
 
 # 출력
 for food in food_list:
-    if food['이름']=='자장면':
+    if food['이름'] == '토마토':
+        food['종류'] = '과일'
+    elif food['이름']=='자장면':
         print('자장면엔 고춧가루지')
     print(f"{food['이름']} 은/는 {food['종류']} (이)다.")
 print(food_list)
