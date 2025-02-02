@@ -29,7 +29,7 @@ def create_user(user_list):
         else:
              continue
     return censored_user_list
-
+# 같은 회사인 경우 덮어써지고 있다. 
 
 def censorship(someone):
     if someone['company'] in black_list:

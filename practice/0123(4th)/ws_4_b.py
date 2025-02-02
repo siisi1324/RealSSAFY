@@ -13,11 +13,6 @@ food_list = [
     },
 ]
 
-# '채소'를 '과일'로 변경
-# food_list[1]['종류'] = '과일'
-
-
-# 출력
 for food in food_list:
     if food['이름'] == '토마토':
         food['종류'] = '과일'
