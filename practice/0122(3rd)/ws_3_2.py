@@ -15,3 +15,5 @@ def create_user(name, age, address):
 
 print(create_user('홍길동', 30, '서울'))
 
+# 여기서 print (create_user)를 하면 create_user의 리턴값이 없기 때문에 none이 출력이 된다. 
+# 그래서 명시적으로 return '' 을 하던지 print를 없애고 함수만 호출하던지 하면 된다. 
