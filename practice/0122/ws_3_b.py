@@ -16,3 +16,4 @@ result_3 = create_data(**global_data)
 print(result_1)
 print(result_2)
 print(result_3)
+

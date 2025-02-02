@@ -7,9 +7,9 @@ def is_negative(number):
     else:
         return False
 
-def is_negative(number):
-    return number <= 0
-
+# def is_negative(number):
+#     return number <= 0
+# 위 코드의 생략본
 
 def default_arg_func(default='기본값'):
         return default
