@@ -76,6 +76,7 @@ class LottoMaker:
     def sort(self):
         # self.numbers = self.numbers.sort()
         # self.numbers = list(self.numbers).sort()
+        # sort()가 return값이 없어서 none값이 입력된다.
         self.numbers = list(self.numbers)
         self.numbers.sort()
 
