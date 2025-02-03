@@ -12,7 +12,7 @@ class Person:
 
 person1 = Person('Alice')
 person2 = Person('Bob')
-print(Person.population)  #
+print(Person.population)  
 
 Person.increase_population()
 print(Person.increase_population)
