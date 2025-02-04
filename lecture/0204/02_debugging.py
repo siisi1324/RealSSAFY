@@ -59,6 +59,8 @@ except:
 
 # else
 # finally
+# finally와 그냥 적는 것의 차이 : 
+# finally를 적으면 정상종료시에도(return) 출력이 된다.
 
 try:
     x = int(input('숫자를 입력하세요: '))
