@@ -1,13 +1,13 @@
 class Dog:
     sound = '멍멍'
     def __init__(self):
-        pass
+        super().__init__()
 
 
 class Cat:
     sound = '냐옹'
     def __init__(self):
-        pass
+        super().__init__()
 
 class Pet(Dog, Cat):
     def __init__(self):
