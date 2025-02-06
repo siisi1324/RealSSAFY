@@ -19,7 +19,7 @@ for tc in range(1, T+1): # 케이스 별로 처리리
                 min_v = sum_v
     print(f'{max_v-min_v}')
 
-
+# 지피티 답
     T = int(input())  # 테스트 케이스 개수 입력
 for tc in range(1, T+1):
     N, M = map(int, input().split())  # N: 배열 크기, M: 부분 배열 크기
