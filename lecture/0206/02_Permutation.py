@@ -48,21 +48,19 @@ print("----------------------------------------------------------------")
 
 # 예제3)
 # perm 의 0번 칸에 넣을 수 있는 거 다 넣어보기
+arr = [1,2,3]
+N = len(arr)
+perm = [0] * N
+
+#perm 의 0번 칸에 넣을 수 있는거 다 넣어보기
 for i in range(N):
     perm[0] = arr[i]
     for j in range(N):
+        #j는 i와 같으면 안됨, 같아도 되는건 중복순열
+        if i == j : continue
         perm[1] = arr[j]
         for k in range(N):
+            if k == i or k == j : continue
             perm[2] = arr[k]
             print(perm)
 
-print("----------------------------------------------------------------")
-
-# 조합
-# 조합이란 
-# 조합이란 서로 다른 n개의 원소 중에서 r개를 순서 없이 선택하는 방법을 의미해.
-# # 즉, 원소의 순서가 중요하지 않은 경우를 다루는 개념이야.
-
-check = [0] * N
-for i in range(2):
-    check[0] = i
