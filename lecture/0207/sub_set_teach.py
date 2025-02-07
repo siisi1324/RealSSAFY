@@ -4,20 +4,20 @@
 
 arr = ['a', 'b', 'c']
 
-# N = len(arr)
+N = len(arr)
 # check = [0] * N # 요소가 부분집합에 포함되는지 아닌지를 0또는 1로 표시하는배열
 # ex) check = [1,0,1] >>> [a,c]
 # 0번 인덱스에 0또는 1넣기
-# for i in range(2): # i는 0 또는 1
-#     check[0] = i
-#     for j in range(2):
-#         check[1] = j
-#         for k in range(2):
-#             check[2] = k
-#             # check의 요소가 1이면 출력 0이면 출력 x
-#             for a in range(N):
-#                 if check[a]:
-#                     print(arr[a],end=',')
+for i in range(2): # i는 0 또는 1
+    check[0] = i
+    for j in range(2):
+        check[1] = j
+        for k in range(2):
+            check[2] = k
+            # check의 요소가 1이면 출력 0이면 출력 x
+            for a in range(N):
+                if check[a]:
+                    print(arr[a],end=',')
 #             print() # 부분집합 하나 출력 끝났으니 한 줄 내려주기
 
 # 알고리즘 문제의 기본 >>>
