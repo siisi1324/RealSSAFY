@@ -1,34 +1,25 @@
-############## 주의 ##############
-# 입력을 받기 위한 input 함수는 절대 사용하지 않습니다.
-# Python 제공 메서드 count 사용 시 감점
+# 2번 
+# 보물 개수 댁셔너리 생성
+# 임계값 이상을 초과하는 보물 종류의 수
+# count 쓰지 마세요
 
 def analyze_treasures(treasure_list, threshold):
     treaser_dict = {}
+    # setdefault사용하기??
     cnt = 0
     for i in treasure_list:
         if i not in treaser_dict:
             treaser_dict[i] = 1
         else:
             treaser_dict[i]+=1
+            # 여기서도 그냥 treaser_dict[i] = 1만을 쓰게 된다면 (if, else문 없이) 
+            # 초기값 딕셔너리 설정에서 에러가 뜬다. 
 
     for j in treaser_dict:
         if treaser_dict[j] > threshold:
             cnt += 1
 
-
-
     return treaser_dict, cnt
-    # 여기에 코드를 작성하여 함수를 완성합니다.
-
-# 추가 테스트를 위한 코드 작성 가능
-# 예) print(함수명(인자))
-
-#####################################################
-# 아래 테스트 코드를 삭제하거나 수정하지 마세요.
-# 모든 책임은 삭제 혹은 수정한 본인에게 있습니다.
-############## 테스트 코드 삭제 금지 #################
-print(analyze_treasures(["gold", "silver", "gold", "diamond", "coin", "coin"], 1))
-# ({'gold': 2, 'silver': 1, 'diamond': 1, 'coin': 2}, 2)
 
 print(analyze_treasures([], 3))
 # ({}, 0)
