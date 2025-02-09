@@ -4,6 +4,7 @@
 # 2차원 리스트 만들기
 N = int(input())
 arr = [list(map(int, input().split())) for _ in range(N)]
+
 print(arr)
 
 print('=====================================================')
