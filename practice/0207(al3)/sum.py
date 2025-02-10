@@ -67,3 +67,44 @@ for testcase in range(10):
  
     print(f'#{test} {max_v}')
 
+print('=====================================================')
+
+# 강사님코드
+# arr을 순회하면서 행, 열, 대각선의 합 중 최대값을 반환하는 함수
+def solve(arr):
+    max_sum = -0xffffffff
+    # 행 우선 순회
+    for i in range(100):
+        row_sum = 0
+        for j in range(100):    # i행 하나를 순회하는 반복문
+            row_sum += arr[i][j]    # i행 요소들 하나씩 더해주기
+        if row_sum > max_sum:   #방금 구한 행의 합이 기존 최대값 보다 크면 교체
+            max_sum = row_sum
+    # 열 우선 순회
+    for i in range(100):
+        col_sum = 0
+        for j in range(100):  # i열 하나를 순회하는 반복문
+            col_sum += arr[j][i]  # i열 요소들 하나씩 더해주기
+        if col_sum > max_sum:  # 방금 구한 행의 합이 기존 최대값 보다 크면 교체
+            max_sum = col_sum
+
+    # 대각선 합(행우선 순회 하면서 조건에 맞는 애들끼리 더 해주기)
+    dia_sum_1 = 0   #우하향 i == j
+    dia_sum_2 = 0   #우i상향  + j == N - 1
+    for i in range(100):
+        for j in range(100):
+            if i == j:
+                dia_sum_1 += arr[i][j]
+            elif i + j == 99:
+                dia_sum_2 += arr[i][j]
+
+    max_sum = dia_sum_1 if dia_sum_1 > max_sum else max_sum
+    max_sum = dia_sum_2 if dia_sum_2 > max_sum else max_sum
+    return max_sum
+
+T = 10
+for _ in range(T):
+    tc = input()
+    arr = [list(map(int, input().split())) for _ in range(100)]
+    result = solve(arr)
+    print(f'#{tc} {result}')

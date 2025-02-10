@@ -29,7 +29,6 @@ def seq_search(a, n, key):
     return -1
 
 
-
 arr = [4, 9, 11, 23, 2, 19, 7]
 
 arr.sort()
