@@ -39,6 +39,7 @@
 
 # [참고 : 문자열은 안에만 변경할 수는 없다.]
 s1 = list(input())  #abc
+# 운영체제가 다르면 뭔가가 달라져서 안될땐, .strip()을 하면 해결될 때가 있다.
 print(s1)  #['a', 'b', 'c']
 s2 = input() #abc
 print(s2) #abc
@@ -67,7 +68,8 @@ txt = list(input())
 N = len(txt)
 for i in range(N//2):
     txt[i], txt[N-1-i] = txt[N-1-i], txt[i]
-print(txt)
+print(''.join(txt))
+# 리스트 -> 문자열로 출력
 
 print('=====================================================')
 
@@ -84,29 +86,5 @@ print(s_list)  # ['s', 't', 'r', 'i', 'n', 'g']
 # 올바른 join 사용법
 print("".join(s_list))  # string
 
-print('=====================================================')
-
-# <연습문제2>
-# 8*8 평면 글자판에서 제시된 길이 만큼의 회문(거꾸로 읽어도 똑같은 문장이나 낱말)의 개수를 구해라
-
-# 4
-# CBBCBAAB
-# CCCBABCB
-# BAAAACAB
-# BACCCCAC
-# AABCBBAC
-# ACAACABC
-# BCCBAABC
-# ABBBCCAA
 
 
-N = int(input())
-txt = input()
-total = 0
-for j in range(8-N+1): # 회문을 확인하는 구간의 첫 글자 인덱스스
-    for k in range(N//2): # 회문의 길이 절반만큼 비교
-        if txt[j+k] != txt[j+N-1-k]:
-            break # 비교 글자가 다르면 현재구간 중지
-    else: #break없이 걸리지 않고 for문 종료
-        total += 1
-print(total)
