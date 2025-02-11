@@ -38,6 +38,7 @@ for test_case in range(1, T+1):
     
 # tc, N = map(int, input().split())
 # 3, 5 (정수)
+    
     N = int(N)
     # 그래서 한번더 정수화시킴
     num = list(input().split())
@@ -55,3 +56,25 @@ for test_case in range(1, T+1):
     print(f'#{test_case}')
     print(*num_list)
     # print(*num_list)는 리스트의 내용을 공백을 포함하여 출력.
+
+print('=====================================================')
+
+# 조경호님 코드
+def solve(NUM, word_lst):
+    result = []
+    for num in NUM:
+        for word in word_lst:
+            if word == num:
+                result.append(num)
+    return result
+ 
+T = int(input())
+for _ in range(1, T+1):
+    NUM = ["ZRO", "ONE", "TWO", "THR", "FOR", "FIV", "SIX", "SVN", "EGT", "NIN"]
+    tc, len_tc = input().split()
+    # int(len_tc)
+    word_lst = list(input().split())
+    result = solve(NUM, word_lst)
+    result = ' '.join(result)
+    # solve(word)
+    print(f'{tc}\n{result}')
