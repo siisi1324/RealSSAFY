@@ -1,3 +1,5 @@
+# 갓조경호님 코드...감사..
+
 T = 10
 for tc in range(T):
     tc_num = int(input())#testcase
