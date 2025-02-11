@@ -9,7 +9,6 @@ s4 = s2 + 'c'
 
 print(s1==s4) # True 같은모양인가?
 print(s1 is s4) # False 같은 메모리 위치인가?
-print(s1 is s4) # False
 print(s1 is 'abc') # True
 
 # 문자열 interning이란?
