@@ -31,7 +31,7 @@ def bruteforce(p, t):
         return -1
 
 
-t = 'TTTTTATTAATA'  # 전체 문자열 (텍스트)
+t = 'TTTTTATTAATA'  # 전체 문자열 (텍스트)!
 p = 'TTA'           # 찾고 싶은 패턴
 
 print(bruteforce(p, t))
