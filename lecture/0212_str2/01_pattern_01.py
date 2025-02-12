@@ -50,10 +50,12 @@ def bruteforce(p, t):
         for j in range(M):  # 패턴을 하나씩 비교
             if t[i + j] != p[j]:  # 불일치하면 내부 루프 종료
                 break
-        if j == M - 1 and t[i + j] == p[j]:  # 패턴 전체가 일치하면
-            return i  # 패턴이 발견된 위치 반환
-    return -1
-        
+        # if j == M - 1 and t[i + j] == p[j]:  # 패턴 전체가 일치하면
+        #     return i  # 패턴이 발견된 위치 반환
+        else:
+            return i
+    else: # 바깥 반복문에서 break가 동작하지 않았을 때 실행 >> 패턴 못 찾음.
+        return -1
 
 
 print('===============================================================')
