@@ -1,4 +1,5 @@
 # 내꺼뭔가수상...뭔가 안된다.
+
 def solve(arr, l, n):    
     cnt = 0
     for i in range(n):
@@ -29,54 +30,93 @@ for tc in range(1, T+1):
 
 print('=====================================================')
 
-# 이경민 코드
-def solution(str):
-    length=3
- 
-    while thereispalindrome(str, length):
-        length+=1
- 
-    return length-1
- 
-# 배열에서 회문 찾기
-def thereispalindrome(str, length):
-    mini_str=''
-    for i in range(100):
-        for j in range(0, 100-length+1):
-            for k in range(length):
-                mini_str += str[i][j + k]
- 
-            if ispalindrome(mini_str):
-                return True
- 
-            mini_str=''
-    else: False
- 
-    for i in range(100):
-        for j in range(0, 100-length+1):
-            for k in range(length):
-                mini_str += str[j+k][i]
- 
-            if ispalindrome(mini_str):
-                return True
- 
-            mini_str = ''
-    else: False
- 
-# 회문 검사 함수
-def ispalindrome(str):
-    for i in range(len(str)//2):
-        if str[i]==str[-1-i]:
-            continue
-        else:
-            break
+# 임창목 강사님
+# arr에서 가장 긴 길이의 회문을 반환하는 함수
+def solve(arr):
+    #M의 길이가 고정되어있다고 가정했을 때 코드부터..
+    # M = 5
+    max_length = 1
+    for i in range(N):
+        is_find = False
+        for M in range(N,max_length,-1): #검사 길이 줄이는 반복문
+            for j in range(N-M+1):  #검사 시작점 이동 반복문
+                is_pal = True
+                for k in range(M//2):
+                    if arr[i][j+k] != arr[i][j+M-1-k]:
+                        is_pal = False
+                        break
+                if is_pal:  #회문인지 확인
+                    # 회문 이다
+                    if max_length < M:
+                        max_length = M
+                    is_find = True
+                    break
+                #################### 열 검사 ################
+                is_pal = True
+                for k in range(M // 2):
+                    if arr[j + k][i] != arr[j + M - 1 - k][i]:
+                        is_pal = False
+                        break
+                if is_pal:  # 회문인지 확인
+                    # 회문 이다
+                    if max_length < M:
+                        max_length = M
+                    is_find = True
+                    break
+            if is_find: # 검사 회문 길이 M을 줄이는 반복문 종료
+                break
+    return max_length
+
+T = 10
+for _ in range(T):
+    tc = input()
+    N = 100
+    arr = [input() for _ in range(N)]
+    result = solve(arr)
+    print(f'#{tc} {result}')
+
+print('=====================================================')
+
+# 회문 2
+# 보충강사님
+
+def finding(field):  # 모든 행의 회문을 찾아보는 함수를 제작
+    len_max = 0  # 최대 길이를 찾기 위해 변수를 설정
+    for row in range(100):  # 모든 행에 대해 수행
+        start = 0  # 시작 지점을 설정
+
+        for col in range(100 - start + 1):  # 모든 시작 지점으로부터 수행
+            length = 0  # 열마다 회문 찾기 이전에 length 변수로 찾을 회문의 길이를 설정
+
+            while length <= 100 - col:  # 시작지점부터 길이가 최대인 회문을 검색할 때까지 수행
+                for char in range(length // 2):  # 회문 길이 절반만큼 탐색
+                    if field[row][col + char] != field[row][col - char + length - 1]:  # 앞 절반과 뒷 절반이 다르면
+                        break  # 탐색 종료
+                else:  # 같으면 회문이므로
+                    if len_max < length:
+                        len_max = length  # 길이를 len_max에 반영
+
+                length += 1  # 회문 길이를 1 늘림
+        start += 1  # 시작 지점을 한 칸 옆으로 옮김
+    return len_max
+
+
+T = 10  # test case
+
+for i in range(T):  # 모든 test case 에 대해 수행
+
+    tc = input()  # test case 의 번호를 받음
+
+    field = [list(input()) for _ in range(100)]  # 모든 행렬을 field 로 받음
+
+    row_finding = finding(field)  # 모든 행에 대해 최대 회문 길이를 찾음
+    col_finding = finding(list(zip(*field)))  # 전치행렬을 이용해 모든 열에 대해 최대 회문 길이를 찾음
+
+    print(f'#{tc}', end=' ')
+    if row_finding >= col_finding:  # 둘 중 더 큰 값을 출력.
+        print(row_finding)
     else:
-        return True
- 
-for _ in range(10):
-    case=input()
-    str=[list(input()) for _ in range(100)]
-    print(f'#{case} {solution(str)}')
+        print(col_finding)
 
 
 print('=====================================================')

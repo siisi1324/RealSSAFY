@@ -17,3 +17,10 @@ for tc in range(1, T+1):
     # list(zip(*data)) 를 하면 zip() 결과를 리스트로 변환해서 최종적으로 전치 행렬(transposed matrix)을 만듦.
     result = solve(txt, num) + solve(txt2, num)
     print(f'#{tc} {result}')
+
+print('=====================================================')
+
+def tip(txt, n):    
+    cnt = 0
+    # 여기 안에다가 코드짜면 됩니다. 
+    return cnt
