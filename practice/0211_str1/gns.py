@@ -138,9 +138,6 @@ for _ in range(1, T+1):
     # solve(word)
     print(f'{tc}\n{result}')
 
-<<<<<<< Updated upstream
-
-=======
 print('=====================================================')
 # 박상훈님 코드(보충강사님)
 
@@ -170,4 +167,4 @@ for _ in range(1, T + 1):
     for i in range(M):
         print(new_order[i], end = ' ')  # 단어 하나씩 붙여서 출력.
     print('')
->>>>>>> Stashed changes
+
