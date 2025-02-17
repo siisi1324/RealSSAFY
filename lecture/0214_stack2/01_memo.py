@@ -17,3 +17,4 @@ memo[0] = 0
 memo[1] = 1
 
 print(fibo1(n), cnt)
+
