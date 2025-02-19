@@ -19,3 +19,9 @@ def permutation(idx):
             used[i] = 0
 
 permutation(0)
+
+
+
+
+# 파워셋, 조합, 순열 외우기, dfs, bfs 를 첨가..하면 A형 딸 수 있다. 
+# 재귀로 도는건 다 dfs 기반, but 가치지기 첨가..

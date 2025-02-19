@@ -11,6 +11,7 @@ def solve(rword):
             if top == -1:
                 ans = 0
                 break
+            # 그냥 top -= 1을 함으로써 다음 push가 오면 덮어씌우는 방식으로 작동한다. 
             elif arr[top] != pair_dict[i]:
                 ans = 0
                 break
