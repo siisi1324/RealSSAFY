@@ -32,7 +32,3 @@ powerset(0,0)
 
 # idx : 요소의 idx
 # 요소가 부분집합에 포함되는지 안되는지 결정하는 함수
-
-
-def powerset(idx):
-    pass
