@@ -1,3 +1,28 @@
+# 내 코드
+def solve(arr):
+    stack = [None] * 100 # 일단 스택만들기
+    top = -1 # top생성
+    for i in arr: # 문자열(리스트) 돌기
+        if i == stack[top]: # 직전의 문자와 동일한 경우
+            stack.pop(top) # 삭제시키기, [], () 조심하기
+            top -= 1 # top(인덱스)도 줄이기
+        else: # 그 외의 경우
+            top += 1 # 추가추가 
+            stack[top] = i
+            
+        
+    return top+1 # 문자열의 길이는 +1인것
+
+
+T = int(input())
+for tc in range(1, T+1):
+    Arr = list(input()) # 문자열을 바로 리스트로 만들기, 이때부터 조심하기
+    result = solve(Arr)
+    print(f'#{tc} {result}')
+
+print('=====================================================')
+
+
 def check_word(txt):
     N = len(txt)        # 입력한 문자열 txt 의 길이
     check_txt = [None] * N  # 반복문자를 지운 문자를 저장할 변수

@@ -20,3 +20,25 @@ for test in range(1, T + 1):
     print(f'#{test}')
     for row in result:
         print(*row)
+
+print('=====================================================')
+
+
+T = int(input())
+for tc in range(1, T+1):
+    N = int(input())
+    pascal = [[0] * N for _ in range(N)] # 계산이후 넣을 공간
+    pascal[0][0] = 1
+    for i in range(1, N):
+        for j in range(N):
+            if j == 0:
+                pascal[i][j] = 1
+            else:
+                pascal[i][j] = pascal[i-1][j-1] + pascal[i-1][j]
+ 
+    print(f'#{tc}')
+    for k in range(N):
+        for m in range(N):
+            if pascal[k][m]:
+                print(pascal[k][m], end=' ')
+        print()
