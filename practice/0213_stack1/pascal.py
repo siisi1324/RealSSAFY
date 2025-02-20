@@ -1,28 +1,4 @@
-def value(i, j):
-    if j == 0 or j == i:  # 첫 번째와 마지막 값은 항상 1
-        return 1
-    return value(i - 1, j - 1) + value(i - 1, j)
- 
-def pascal_triangle(N):
-    triangle = [[0] * (i + 1) for i in range(N)]  # 미리 리스트를 할당
- 
-    for i in range(N):
-        for j in range(i + 1):
-            triangle[i][j] =value(i, j)  # 재귀 함수로 값 채우기
- 
-    return triangle
- 
-T = int(input())
-for test in range(1, T + 1):
-    N = int(input())
-    result = pascal_triangle(N)
- 
-    print(f'#{test}')
-    for row in result:
-        print(*row)
-
-print('=====================================================')
-
+# 자빈언니코드
 
 T = int(input())
 for tc in range(1, T+1):
@@ -42,3 +18,26 @@ for tc in range(1, T+1):
             if pascal[k][m]:
                 print(pascal[k][m], end=' ')
         print()
+
+
+print('=====================================================')
+# 함수형으로 수정(return, 0인 값 제외시키기)
+
+def solve(N):
+    pascal = [[0] * N for _ in range(N)] # 계산이후 넣을 공간
+    pascal[0][0] = 1
+    for i in range(1, N):
+        for j in range(N):
+            if j == 0:
+                pascal[i][j] = 1
+            else:
+                pascal[i][j] = pascal[i-1][j-1] + pascal[i-1][j]
+    return pascal  # 반환 추가
+
+T = int(input())
+for tc in range(1, T+1):
+    N = int(input())
+    result = solve(N)  # 함수에서 삼각형을 받아옴
+    print(f'#{tc}')
+    for row in result:
+        print(*[num for num in row if num])  # 0이 아닌 값만 출력
