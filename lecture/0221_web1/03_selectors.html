@@ -1,0 +1,66 @@
+<!-- # CSS 선택자 (중요)
+
+## CSS Selectors
+
+- HTML 요소를 선택하여 스타일을 적용할 수 있도록 하는 선택
+
+## 기본 선택자
+
+- 전체(\*) 선택자 - HTML 모든 요소를 선택
+- 요소(tag) 선택자 - 지정한 모든 태그를 선택
+- 클래스(class) 선택자 (’.’ (dot))
+    - 주어진 클래스 속성을 가진 모든 요소를 선택
+    - 재사용을 위해서 사용
+- 아이디(id) 선택자 (’#’)
+    - 주어진 아이디 속성을 가지 요소 선택
+    - 문서에는 주어진 아이디를 가진 요소가 하나만 있어야 함
+- 속성(attr) 선택자 등 -->
+
+<!-- ## 결합자 (Combinators)
+
+- 자손 결합자 (" " space)
+    - 첫 번쨰 요소의 자손 요소들 선택
+    - ex) p span은 <p>은 <p> 안에 있는 모든 <span>를 선택 (하위 레벨 상관 없이)
+- 자식 결합자 (">")
+- 첫 번째 요소의 직계 자식만 선택
+- 예) ul > li 은 <ul> 안에 있는 모든 <li>를 선택(한 단계 아래 자식들만) -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h2 {
+        color: darkviolet !important;
+      }
+
+      p {
+        color: blue;
+      }
+
+      .orange {
+        color: orange;
+      }
+
+      .green {
+        color: green;
+      }
+
+      #red {
+        color: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>1</p>
+    <p class="orange">2</p>
+    <p class="green orange">3</p>
+    <p class="orange green">4</p>
+    <p id="red" class="orange">5</p>
+    <h2 id="red" class="orange">6</h2>
+    <p id="red" class="orange" style="color: brown">7</p>
+    <h2 id="red" class="orange" style="color: brown">8</h2>
+  </body>
+</html>
