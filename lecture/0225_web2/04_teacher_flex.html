@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container{
+      width: 1000px;
+      height: 1000px;
+      border: 1px solid red;
+    }
+    .box{
+      width: 100px;
+      height: 100px;
+    }
+    .bg-red{
+      background-color: red;
+    }
+    .bg-blue{
+      background-color: blue;
+    }
+    .bg-green{
+      background-color: green;
+    }
+    .bg-pink{
+      background-color: pink;
+    }
+    .d-flex{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      /* flex에서 정렬 종류 2가지 : justify-content(메인축 정렬), align(교차축 정렬) */
+      flex-wrap: wrap;
+      /* 기본이 no-wrap */
+    }
+  </style>
+</head>
+<body>
+  <div class="d-flex container">
+    <div class="box bg-red"></div>
+    <div class="box bg-pink"></div>
+    <div class="box bg-green"></div>
+  </div>
+</body>
+</html>

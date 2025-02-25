@@ -1,0 +1,73 @@
+<!-- 암기위주로 외워라 -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* class 속성이 box를 포함하는 요소 */
+    .box{
+      width: 100px;
+      height: 100px;
+    }
+    .bg-red{
+      background-color: red;
+    }
+    .bg-blue{
+      background-color: blue;
+    }
+    .bg-green{
+      background-color: green;
+    }
+    .bg-pink{
+      background-color: pink;
+    }
+    .d-inline{
+      display: inline;
+    }
+    .d-inlineblock{
+      display: inline-block;
+    }
+    /* display : 요소가 어떻게 배치될지 결정하는 속성 */
+    /* 요소마다...display가 결정이 되어있다. 
+    block : div, p, h1, form, ... 
+    inline : a, img, input,... */
+    .m-10{
+      margin: 10px;
+    }
+    /* 수직방향으로는 서로를 밀어낼 수 없다. */
+    .d-flex{
+      display: flex;
+      flex-direction: column;
+      /* flex의 축을 세로방향으로 바꾸기, 기본값은 row */
+      /* display : flex 를 먹이면 요소들이 inline스럽게 바뀐다, 원래의 컨텐트 영역만 가진다.  */
+    }
+    /* 요소 안의 배치를 결정하기 때문에  */
+
+  </style>
+</head>
+<body>
+  <div class="box bg-red m-10">box1</div>
+  <!-- 아이디는 하나만 가질 수 있지만 클래스는 여러 개 가지기 가능 -->
+   <div class="box bg-blue m-10">box2</div>
+   <div class="box bg-green d-inline m-10">box3</div>
+   <div class="box bg-pink d-inline m-10">box4</div>
+   <div class="box bg-green d-inline m-10">box3</div>
+   <div class="box bg-pink d-inline m-10">box4</div>
+   <!-- inline요소는 width와 height을 가질 수 없고, content의 크기만을 가질 수 있다. -->
+   <!-- 따라서 inline-block이라는 아이를 사용 -> 배치는 inline, 속성은 block요소처럼 가질 수 있다.-->
+
+   <!-- flex : 요소의 내부를 어떻게 배치할지 결정하는 display속성이다. -->
+    <br>
+    <br>
+    <div class="d-flex">
+      <div class="box bg-red"></div>
+      <div class="box bg-pink"></div>
+      <div class="box bg-green"></div>
+
+    </div>
+</body>
+</html>
