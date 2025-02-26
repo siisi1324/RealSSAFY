@@ -16,6 +16,8 @@ def solve(arr, n, m):
             j += dc[d]
             if 0<=i<=n and 0<=j<=n:
                 num_sum += arr[i][j]
+            else:
+                i
                 
                 
 
