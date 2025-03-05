@@ -32,7 +32,7 @@ tree[7] = '!'
 
 print(tree)
 
-tree_value = [None] *  V
+tree_value = [None] * V
 
 tree_value[5] = 'S'
 tree_value[1] = 'S'
