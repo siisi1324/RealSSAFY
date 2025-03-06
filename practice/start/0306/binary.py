@@ -15,11 +15,7 @@ def decimal_to_binary(c):
         binary_number = str(remainder) + binary_number
         c = c // 2
 
-    if len(binary_number) < 4:
-        binary_number = '0'*(4-len(binary_number)) + binary_number
-
     return binary_number
-
 
 T = int(input())
 for tc in range(1, T+1):
@@ -29,6 +25,8 @@ for tc in range(1, T+1):
     for i in num:
         n = Alphabet[i]
         num1 = decimal_to_binary(n)
+        if len(num1) < 4:
+            num1 = '0' * (4 - len(num1)) + num1
         total_bin += num1
 
     print(f'#{tc} {total_bin}')
