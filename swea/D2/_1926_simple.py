@@ -1,16 +1,23 @@
 N = int(input())
 
 arr = list(range(1, N+1))
-cnt = 0
+arr2 = [0] * (N+1)
 for i in arr:
     if '3' in str(i):
-        cnt += 1
+        arr2[i] += 1
     if '6' in str(i):
-        cnt += 1
+        arr2[i] += 1
     if '9' in str(i):
-        cnt += 1
+        arr2[i] += 1
+
 
 for i in arr:
+    if arr2[i]==0:
+        print(i, end=' ')
+    else:
+        print('-'*arr2[i], end=' ')
+
+
 
 
 

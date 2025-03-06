@@ -1,3 +1,7 @@
+# 함수를 쓰면 되지만 할 줄 알아야 한다.
+# 뭐든지
+
+
 # 2진수로 변환
 def decimal_to_binary(n):
     binary_number = ""
@@ -57,6 +61,40 @@ def hexadecimal_to_decimal(hex_str):
         pow += 1
 
     return decimal_number
+
+# hex_to_decimal
+# 16진수 알파벳이 어떤 숫자를 의미하는지 계산
+hex_dict = {
+    '0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7,
+    '8': 8, '9': 9, 'A': 10, 'B': 11, 'C': 12, 'D': 13, 'E': 14, 'F': 15,
+}
+# hex_to_decimal
+# 16진수 알파벳이 어떤 숫자를 의미하는지 계산
+def hex_to_decimal(hex_num):    #'4F1A'
+    exp = len(hex_num)-1
+    # 16의 지수승 들을 더할 변수
+    decimal_num = 0
+    for i in range(len(hex_num)):
+        # hex_dict[hex_num[i]] : 10진 숫자
+        decimal_num += (16**exp * hex_dict[hex_num[i]])
+        exp -= 1
+    return decimal_num
+
+def decimal_to_binary(num):
+    binary = ''
+    while num > 0:
+        remain = num % 2
+        num = num // 2
+        binary = str(remain) + binary
+    return binary
+
+print(hex_to_decimal('47FE'))
+print(decimal_to_binary(20))
+print(decimal_to_binary(hex_to_decimal('47FE')))
+# 0100011111111110
+ # 100011111111110
+
+
 
 
 # 예시: 10진수를 2진수와 16진수로 변환
