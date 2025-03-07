@@ -1,3 +1,4 @@
+# 단순한 369게임, 개수만큼 - 를 출력하시오.
 N = int(input())
 
 arr = list(range(1, N+1))
