@@ -4,6 +4,17 @@ N = int(input())
 arr = list(range(1, N+1))
 
 
+for i in arr:
+    cnt = 0
+    for j in str(i):
+        if j=='3' or j=='6' or j == '9':
+            cnt += 1
+    if cnt == 0:
+        print(f'{i}', end=' ')
+    else:
+        print('-'*cnt, end=' ')
+
+
 
 
 

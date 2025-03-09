@@ -8,7 +8,7 @@ print(bin(7 & 5))
 print(bin(0x4A3 | 25))
 
 secret_code = 1004
-print(7070 ^ secret_code)
+print(7070 ^ secret_code) # ^ xor연산자
 print(6258 ^ secret_code)
 
 # ----------- shift 연산자
