@@ -17,3 +17,6 @@ for tc in range(1, T+1):
         else:
             is_max = arr[N-i-1]
     print(f'#{tc} {sum}')
+
+
+
