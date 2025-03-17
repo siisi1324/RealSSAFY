@@ -7,9 +7,11 @@ N = len(arr)
 # 정렬된 두 배열을 병합해서 반환하는 함수
 def merge(arr1, arr2):
     sorted_arr = []
+    # 둘 중에 하나라도 끝나면 false가 된다.
     while arr1 and arr2:
         # arr1[0], arr2[0] 끼리 비교
         if arr1[0] < arr2[0]:
+            # 삭제하면서 새로 arr업데이트하기
             sorted_arr.append(arr1.pop(0))
         else:
             sorted_arr.append(arr2.pop(0))
